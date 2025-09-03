@@ -116,6 +116,24 @@ sudo apt install pgadmin4-desktop
 echo "INSTALLED PGADMIN4"
 ################################## END PGADMIN4 #####################################
 
+echo "INSTALLING GOOGLE CHROME"
+wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+sudo apt install -y ./google-chrome-stable_current_amd64.deb
+rm google-chrome-stable_current_amd64.deb
+echo "INSTALLED GOOGLE CHROME"
+
+# -------------------------- TELEGRAM ---------------------------
+echo "INSTALLING TELEGRAM"
+sudo snap install telegram-desktop
+echo "INSTALLED TELEGRAM"
+
+# -------------------------- MICROSOFT EDGE ---------------------
+echo "INSTALLING MICROSOFT EDGE"
+wget -q https://packages.microsoft.com/keys/microsoft.asc -O- | sudo apt-key add -
+sudo add-apt-repository "deb [arch=amd64] https://packages.microsoft.com/repos/edge stable main"
+sudo apt update
+sudo apt install -y microsoft-edge-stable
+echo "INSTALLED MICROSOFT EDGE"
 
 # Thiếu Nodejs và Angular Cài thủ công vì phải chọn version LTS và new terminal 
 
