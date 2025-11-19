@@ -1,0 +1,36 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Django ASGI: Run + Reload",
+      "type": "python",
+      "request": "launch",
+      "python": "${workspaceFolder}/server/venv/Scripts/python.exe",
+      "module": "uvicorn",
+      "args": [
+        "endpoint_manager.asgi:application",
+        "--reload",
+        "--host", "127.0.0.1",
+        "--port", "8000"
+      ],
+      "cwd": "${workspaceFolder}/server",
+      "console": "integratedTerminal"
+    },
+    {
+      "name": "Django ASGI: Debug (Attach)",
+      "type": "python",
+      "request": "attach",
+      "connect": {
+        "host": "127.0.0.1",
+        "port": 5678
+      },
+      "pathMappings": [
+        {
+          "localRoot": "${workspaceFolder}/server",
+          "remoteRoot": "/app"
+        }
+      ],
+      "justMyCode": true
+    }
+  ]
+}
